@@ -167,21 +167,22 @@ a {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* === Base Page Hero === */
+/* === HERO SECTIONS - FIXED === */
 .page-hero {
     position: relative;
     width: 100%;
     overflow: hidden;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
     color: #fff;
 }
 
-/* === Landing Page Hero (Video) === */
+/* === Landing Page Hero (Video) - HOME PAGE === */
 .page-hero.landing {
     height: 100vh;
+    min-height: 600px;
 }
 
 .page-hero.landing .video-container {
@@ -197,23 +198,15 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
-/* === Inner Page Hero (About, Reviews, etc.) === */
+/* === Inner Page Hero (Image) - ALL OTHER PAGES === */
 .page-hero.inner {
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 2rem; /* top/bottom space */
+    height: 60vh;
+    min-height: 400px;
+    margin-top: 80px; /* Account for fixed navbar */
 }
 
-/* Background image */
 .page-hero.inner .hero-image {
     position: absolute;
     top: 0;
@@ -221,13 +214,13 @@ a {
     width: 100%;
     height: 100%;
     z-index: 0;
-    overflow: hidden;
 }
 
 .page-hero.inner .hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 /* Overlay for both hero types */
@@ -248,6 +241,7 @@ a {
     max-width: 800px;
     width: 100%;
     padding: 0 2rem;
+    text-align: center;
 }
 
 /* Hero Text */
@@ -268,16 +262,7 @@ a {
     line-height: 1.6;
     opacity: 0.95;
     margin: 0 auto;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: clamp(2rem, 7vw, 3rem);
-    }
-    .hero-content p {
-        font-size: clamp(1rem, 2.5vw, 1.2rem);
-    }
+    color: #e4e6ea;
 }
 
 /* Buttons */
@@ -2332,240 +2317,7 @@ a {
     box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
 }
 
-/* Utility Classes */
-.message {
-    padding: 18px 25px;
-    border-radius: 15px;
-    margin: 25px 0;
-    font-weight: 500;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid transparent;
-}
-
-.message.success {
-    background: rgba(76, 175, 80, 0.1);
-    color: #4caf50;
-    border-color: rgba(76, 175, 80, 0.3);
-}
-
-.message.error {
-    background: rgba(244, 67, 54, 0.1);
-    color: #f44336;
-    border-color: rgba(244, 67, 54, 0.3);
-}
-
-.message.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Lightbox Styles */
-.lightbox-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 3000;
-    opacity: 0;
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-}
-
-.lightbox-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-    text-align: center;
-}
-
-.lightbox-content img {
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-    border-radius: 15px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
-}
-
-.lightbox-close {
-    position: absolute;
-    top: -50px;
-    right: -10px;
-    color: #ffffff;
-    font-size: 2.5rem;
-    cursor: pointer;
-    z-index: 3001;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-}
-
-.lightbox-close:hover {
-    background: rgba(255, 107, 107, 0.8);
-    transform: scale(1.1);
-}
-
-.lightbox-info {
-    color: #ffffff;
-    margin-top: 25px;
-}
-
-.lightbox-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.lightbox-info p {
-    opacity: 0.85;
-    font-size: 1.1rem;
-}
-
-/* Loading States */
-.loading {
-    opacity: 0.7;
-    pointer-events: none;
-    position: relative;
-}
-
-.loading::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    margin: -10px 0 0 -10px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-top: 2px solid #ffffff;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #1a1a1a;
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
-    border-radius: 4px;
-    transition: background 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #ff5252, #26a69a);
-}
-
-/* Selection Styling */
-::selection {
-    background: rgba(255, 107, 107, 0.3);
-    color: #ffffff;
-}
-
-::-moz-selection {
-    background: rgba(255, 107, 107, 0.3);
-    color: #ffffff;
-}
-
-/* Focus States */
-button:focus,
-input:focus,
-textarea:focus,
-select:focus {
-    outline: 2px solid rgba(255, 107, 107, 0.5);
-    outline-offset: 2px;
-}
-
 /* Responsive Design */
-@media (max-width: 1200px) {
-    .container {
-        padding: 0 40px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-    
-    .about-content {
-        gap: 60px;
-    }
-    
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-    
-    .specialty-grid {
-        gap: 25px;
-    }
-    
-    .process-steps {
-        gap: 30px;
-    }
-    
-    .step::after {
-        display: none;
-    }
-    
-    .bts-grid {
-        gap: 30px;
-    }
-    
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-    
-    .reviews-container {
-        gap: 30px;
-    }
-    
-    .review-card.featured {
-        grid-column: 1;
-    }
-    
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-    
-    .packages-grid {
-        gap: 30px;
-    }
-    
-    .steps-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-}
-
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -2598,10 +2350,6 @@ select:focus {
         padding: 1rem 0;
     }
 
-    .nav-container {
-        padding: 1rem 2rem;
-    }
-
     .page-hero {
         height: 50vh;
         min-height: 350px;
@@ -2618,15 +2366,9 @@ select:focus {
         gap: 25px;
     }
 
-    .reviews-grid {
+    .form-row {
         grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
+        gap: 20px;
     }
 
     .input-group {
@@ -2640,358 +2382,5 @@ select:focus {
 
     .input-group button {
         border-radius: 0 0 15px 15px;
-    }
-
-    .specialty-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .profile-stats {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .process-steps {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .philosophy-content blockquote {
-        padding: 0 20px;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .review-filter {
-        gap: 10px;
-    }
-
-    .review-filter .filter-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-
-    .reviewer-info {
-        gap: 12px;
-    }
-
-    .reviewer-info img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .contact-form-container {
-        padding: 30px;
-    }
-
-    .contact-method {
-        padding: 20px;
-        gap: 15px;
-    }
-
-    .method-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
-    }
-
-    .faq-question {
-        padding: 20px 25px;
-    }
-
-    .faq-item.active .faq-answer {
-        padding: 0 25px 20px;
-    }
-
-    .steps-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .packages-grid {
-        gap: 25px;
-    }
-
-    .booking-container {
-        padding: 40px 30px;
-    }
-
-    .form-section {
-        padding: 25px;
-    }
-
-    .contact-options {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    /* Reduce padding on mobile */
-    .featured-gallery,
-    .about-teaser,
-    .reviews-preview,
-    .about-main,
-    .behind-scenes,
-    .philosophy-section,
-    .process-section,
-    .cta-section,
-    .reviews-stats,
-    .reviews-main,
-    .reviews-cta,
-    .contact-info-section,
-    .faq-section,
-    .ready-to-book,
-    .booking-steps,
-    .packages-section,
-    .booking-form-section,
-    .quick-contact {
-        padding: 80px 0;
-    }
-
-    .newsletter-section {
-        padding: 70px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 20px;
-    }
-
-    .nav-container {
-        padding: 1rem;
-    }
-
-    .logo h2 {
-        font-size: 1.5rem;
-    }
-
-    .page-hero {
-        height: 40vh;
-        min-height: 300px;
-    }
-
-    .review-card {
-        padding: 25px 20px;
-    }
-
-    .review-card.featured::after {
-        left: 20px;
-        font-size: 0.8rem;
-        padding: 6px 15px;
-    }
-
-    .reviewer-details h4 {
-        font-size: 1rem;
-    }
-
-    .review-content p {
-        font-size: 1rem;
-    }
-
-    .about-image img {
-        height: 350px;
-    }
-
-    .stat-card {
-        padding: 25px 20px;
-    }
-
-    .stat-icon {
-        font-size: 2.5rem;
-    }
-
-    .stat-number {
-        font-size: 2.5rem;
-    }
-
-    .contact-form-container {
-        padding: 25px;
-    }
-
-    .form-header h3 {
-        font-size: 1.5rem;
-    }
-
-    .contact-method {
-        padding: 15px;
-        gap: 12px;
-    }
-
-    .method-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-
-    .faq-question {
-        padding: 15px 20px;
-    }
-
-    .faq-question h4 {
-        font-size: 1rem;
-    }
-
-    .faq-item.active .faq-answer {
-        padding: 0 20px 15px;
-    }
-
-    .social-links-contact a {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
-    }
-
-    .booking-step {
-        padding: 20px 15px;
-    }
-
-    .step-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-
-    .package-card {
-        padding: 25px;
-    }
-
-    .package-header h3 {
-        font-size: 1.5rem;
-    }
-
-    .package-price {
-        font-size: 1.8rem;
-    }
-
-    .booking-container {
-        padding: 30px 20px;
-    }
-
-    .form-section {
-        padding: 20px;
-    }
-
-    .form-section h3 {
-        font-size: 1.5rem;
-    }
-
-    .form-actions .submit-btn {
-        padding: 18px 35px;
-        font-size: 1rem;
-    }
-
-    .philosophy-content blockquote {
-        padding: 0 15px;
-    }
-
-    .philosophy-content blockquote::before {
-        font-size: 4rem;
-        top: -15px;
-        left: -5px;
-    }
-
-    /* Further reduce padding on very small screens */
-    .featured-gallery,
-    .about-teaser,
-    .reviews-preview,
-    .about-main,
-    .behind-scenes,
-    .philosophy-section,
-    .process-section,
-    .cta-section,
-    .reviews-stats,
-    .reviews-main,
-    .reviews-cta,
-    .contact-info-section,
-    .faq-section,
-    .ready-to-book,
-    .booking-steps,
-    .packages-section,
-    .booking-form-section,
-    .quick-contact {
-        padding: 60px 0;
-    }
-
-    .newsletter-section {
-        padding: 50px 0;
-    }
-}
-
-/* High-end animation refinements */
-@media (prefers-reduced-motion: no-preference) {
-    .gallery-item,
-    .review-card,
-    .booking-step,
-    .package-card,
-    .specialty-item,
-    .bts-item,
-    .stat-card,
-    .contact-method,
-    .faq-item {
-        animation: fadeInUp 0.6s ease-out backwards;
-    }
-
-    .gallery-item:nth-child(1) { animation-delay: 0.1s; }
-    .gallery-item:nth-child(2) { animation-delay: 0.2s; }
-    .gallery-item:nth-child(3) { animation-delay: 0.3s; }
-    .gallery-item:nth-child(4) { animation-delay: 0.1s; }
-    .gallery-item:nth-child(5) { animation-delay: 0.2s; }
-    .gallery-item:nth-child(6) { animation-delay: 0.3s; }
-    .gallery-item:nth-child(7) { animation-delay: 0.1s; }
-    .gallery-item:nth-child(8) { animation-delay: 0.2s; }
-    .gallery-item:nth-child(9) { animation-delay: 0.3s; }
-
-    .review-card:nth-child(1) { animation-delay: 0.1s; }
-    .review-card:nth-child(2) { animation-delay: 0.2s; }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Print Styles */
-@media print {
-    * {
-        background: transparent !important;
-        color: black !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    .navbar,
-    .footer,
-    .cta-button,
-    .secondary-btn,
-    .book-btn {
-        display: none;
-    }
-
-    body {
-        font-size: 12pt;
-        line-height: 1.4;
-    }
-
-    h1, h2, h3, h4 {
-        page-break-after: avoid;
     }
 }
