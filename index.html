@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Photography Studio</title>
+    <title>Bergmann Productions - Professional Photography</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -12,14 +12,14 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <h2>PhotoStudio</h2>
+                <h2>Bergmann Productions</h2>
             </div>
             <div class="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#gallery" class="nav-link">Gallery</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#reviews" class="nav-link">Reviews</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="reviews.html" class="nav-link">Reviews</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="book.html" class="nav-link book-btn">Book a Session</a>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -29,134 +29,120 @@
         </div>
     </nav>
 
-    <!-- Video Banner Section -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="video-container">
-            <div class="video-placeholder">
-                <div class="placeholder-content">
-                    <i class="fas fa-video"></i>
-                    <h3>Video Banner Placeholder</h3>
-                    <p>Replace with your studio video</p>
-                </div>
-            </div>
+        <div class="hero-image">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="placeholder-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <div class="hero-overlay">
                 <div class="hero-content">
-                    <h1>Capturing Life's Beautiful Moments</h1>
-                    <p>Professional photography services for weddings, portraits, and events</p>
-                    <button class="cta-button">View My Work</button>
+                    <h1>Capture Your Story</h1>
+                    <p>Professional photography that brings your vision to life</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Photo Gallery Section -->
-    <section id="gallery" class="gallery-section">
+    <!-- Featured Gallery Section -->
+    <section class="featured-gallery">
         <div class="container">
-            <h2>My Photography</h2>
-            <div class="gallery-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="wedding">Weddings</button>
-                <button class="filter-btn" data-filter="portrait">Portraits</button>
-                <button class="filter-btn" data-filter="event">Events</button>
-            </div>
+            <h2>Featured Work</h2>
             <div class="gallery-grid">
+                <!-- Row 1 -->
                 <div class="gallery-item" data-category="wedding">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop" alt="Wedding Photo 1">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=400&fit=crop" alt="Wedding Photography">
                     <div class="gallery-overlay">
                         <h4>Wedding Photography</h4>
-                        <p>Beautiful moments captured</p>
+                        <p>Eternal moments captured</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="portrait">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=300&fit=crop" alt="Portrait Photo 1">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop" alt="Portrait Photography">
                     <div class="gallery-overlay">
-                        <h4>Portrait Session</h4>
-                        <p>Professional headshots</p>
+                        <h4>Portrait Sessions</h4>
+                        <p>Professional headshots & portraits</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="event">
-                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=300&fit=crop" alt="Event Photo 1">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=400&fit=crop" alt="Event Photography">
                     <div class="gallery-overlay">
-                        <h4>Corporate Event</h4>
+                        <h4>Corporate Events</h4>
                         <p>Professional event coverage</p>
                     </div>
                 </div>
+                
+                <!-- Row 2 -->
                 <div class="gallery-item" data-category="wedding">
-                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=400&h=300&fit=crop" alt="Wedding Photo 2">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=400&h=400&fit=crop" alt="Wedding Ceremony">
                     <div class="gallery-overlay">
-                        <h4>Wedding Ceremony</h4>
-                        <p>Unforgettable moments</p>
+                        <h4>Wedding Ceremonies</h4>
+                        <p>Sacred moments preserved</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="portrait">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop" alt="Portrait Photo 2">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Creative Portrait">
                     <div class="gallery-overlay">
-                        <h4>Creative Portrait</h4>
+                        <h4>Creative Portraits</h4>
                         <p>Artistic expression</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="event">
-                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&h=300&fit=crop" alt="Event Photo 2">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&h=400&fit=crop" alt="Special Celebrations">
                     <div class="gallery-overlay">
-                        <h4>Special Celebration</h4>
+                        <h4>Special Celebrations</h4>
                         <p>Memorable gatherings</p>
                     </div>
                 </div>
+
+                <!-- Row 3 -->
+                <div class="gallery-item" data-category="wedding">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&h=400&fit=crop" alt="Wedding Details">
+                    <div class="gallery-overlay">
+                        <h4>Wedding Details</h4>
+                        <p>Every detail matters</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="portrait">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop" alt="Family Portraits">
+                    <div class="gallery-overlay">
+                        <h4>Family Portraits</h4>
+                        <p>Generational memories</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="event">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=400&fit=crop" alt="Business Events">
+                    <div class="gallery-overlay">
+                        <h4>Business Events</h4>
+                        <p>Professional documentation</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Me Section -->
-    <section id="about" class="about-section">
+    <!-- About Me Teaser -->
+    <section class="about-teaser">
         <div class="container">
             <div class="about-content">
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>Hi, I'm a passionate photographer with over 8 years of experience capturing life's most precious moments. My journey began with a simple love for storytelling through images, and has evolved into a full-time dedication to creating beautiful, timeless photographs.</p>
-                    <p>I specialize in wedding photography, portrait sessions, and corporate events. My approach combines artistic vision with technical expertise to deliver images that not only look stunning but also tell your unique story.</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>500+</h3>
-                            <p>Happy Clients</p>
-                        </div>
-                        <div class="stat">
-                            <h3>200+</h3>
-                            <p>Weddings Shot</p>
-                        </div>
-                        <div class="stat">
-                            <h3>8+</h3>
-                            <p>Years Experience</p>
-                        </div>
-                    </div>
-                </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop" alt="Photographer">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop" alt="Dylan Bergmann">
+                </div>
+                <div class="about-text">
+                    <h2>Meet Dylan Bergmann</h2>
+                    <p>With over 8 years of experience behind the lens, I specialize in capturing the authentic emotions and fleeting moments that make your story unique. My approach combines technical expertise with artistic vision to create timeless photographs you'll treasure forever.</p>
+                    <p>From intimate weddings to corporate events, I believe every moment deserves to be preserved with care and creativity.</p>
+                    <a href="about.html" class="learn-more-btn">Learn More About Me</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Email Signup Section -->
-    <section class="newsletter-section">
+    <!-- Quick Reviews Preview -->
+    <section class="reviews-preview">
         <div class="container">
-            <div class="newsletter-content">
-                <h2>Stay Updated</h2>
-                <p>Subscribe to my newsletter for photography tips, behind-the-scenes content, and exclusive offers.</p>
-                <form class="newsletter-form" id="newsletterForm">
-                    <div class="input-group">
-                        <input type="email" placeholder="Enter your email address" required>
-                        <button type="submit">Subscribe</button>
-                    </div>
-                </form>
-                <p class="newsletter-disclaimer">No spam, unsubscribe at any time.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section id="reviews" class="reviews-section">
-        <div class="container">
-            <h2>What Clients Say</h2>
+            <h2>What Clients Are Saying</h2>
             <div class="reviews-grid">
                 <div class="review-card">
                     <div class="stars">
@@ -166,12 +152,12 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Absolutely incredible work! The wedding photos exceeded all our expectations. Every moment was captured beautifully and the final gallery brought tears to our eyes. Highly recommend!"</p>
+                    <p>"Dylan captured our wedding day perfectly. Every emotion, every detail – it's all there in the most beautiful way."</p>
                     <div class="reviewer">
                         <img src="https://images.unsplash.com/photo-1494790108755-2616b612b353?w=60&h=60&fit=crop&crop=face" alt="Sarah Johnson">
                         <div>
-                            <h4>Sarah Johnson</h4>
-                            <span>Bride, June 2024</span>
+                            <h4>Sarah & Mark Johnson</h4>
+                            <span>Wedding, June 2024</span>
                         </div>
                     </div>
                 </div>
@@ -183,7 +169,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Professional, creative, and so easy to work with! The corporate headshots came out perfect and really helped elevate our company's image. Will definitely book again."</p>
+                    <p>"Professional, creative, and incredibly easy to work with. Our corporate headshots exceeded all expectations."</p>
                     <div class="reviewer">
                         <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="Michael Chen">
                         <div>
@@ -193,62 +179,25 @@
                     </div>
                 </div>
             </div>
+            <div class="reviews-cta">
+                <a href="reviews.html" class="secondary-btn">Read More Reviews</a>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <!-- Email Signup Section -->
+    <section class="newsletter-section">
         <div class="container">
-            <h2>Let's Work Together</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>hello@photostudio.com</p>
-                        </div>
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Get photography tips, behind-the-scenes content, and exclusive session offers delivered to your inbox.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="input-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">Join the List</button>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+1 (555) 123-4567</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>New York, NY</p>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" name="phone" placeholder="Your Phone (optional)">
-                    </div>
-                    <div class="form-group">
-                        <select name="service" required>
-                            <option value="">Select Service</option>
-                            <option value="wedding">Wedding Photography</option>
-                            <option value="portrait">Portrait Session</option>
-                            <option value="event">Event Photography</option>
-                            <option value="corporate">Corporate Headshots</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
                 </form>
+                <p class="newsletter-disclaimer">No spam, unsubscribe at any time.</p>
             </div>
         </div>
     </section>
@@ -258,36 +207,36 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>PhotoStudio</h3>
-                    <p>Capturing life's beautiful moments with passion and creativity.</p>
+                    <h3>Bergmann Productions</h3>
+                    <p>Professional photography services capturing life's most beautiful moments with artistry and passion.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="#">Wedding Photography</a></li>
-                        <li><a href="#">Portrait Sessions</a></li>
-                        <li><a href="#">Event Photography</a></li>
-                        <li><a href="#">Corporate Headshots</a></li>
+                        <li><a href="book.html">Wedding Photography</a></li>
+                        <li><a href="book.html">Portrait Sessions</a></li>
+                        <li><a href="book.html">Event Photography</a></li>
+                        <li><a href="book.html">Corporate Headshots</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#">Pricing</a></li>
+                        <li><a href="about.html">About Dylan</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="book.html">Book a Session</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 PhotoStudio. All rights reserved.</p>
+                <p>&copy; 2024 Bergmann Productions. All rights reserved.</p>
             </div>
         </div>
     </footer>

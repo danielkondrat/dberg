@@ -1,4 +1,4 @@
-// script.js
+// script.js - Updated for Bergmann Productions
 
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
@@ -6,23 +6,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Toggle mobile menu
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
 
     // Close mobile menu when clicking on a link
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            if (hamburger) hamburger.classList.remove('active');
+            if (navMenu) navMenu.classList.remove('active');
         });
     });
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
-        if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+        if (hamburger && navMenu && 
+            !hamburger.contains(event.target) && 
+            !navMenu.contains(event.target)) {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
         }
@@ -46,30 +49,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Navbar Background Change on Scroll
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = 'none';
+    if (navbar) {
+        if (window.scrollY > 100) {
+            navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+        } else {
+            navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            navbar.style.boxShadow = 'none';
+        }
     }
 });
 
-// Gallery Filter Functionality
+// Gallery Filter Functionality (Homepage and Reviews)
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    const galleryItems = document.querySelectorAll('.gallery-item, .review-card');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             const filterValue = this.getAttribute('data-filter');
             
-            // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
             this.classList.add('active');
 
-            // Filter gallery items
             galleryItems.forEach(item => {
                 const category = item.getAttribute('data-category');
                 
@@ -91,16 +93,19 @@ document.addEventListener('DOMContentLoaded', function() {
     galleryItems.forEach(item => {
         item.addEventListener('click', function() {
             const img = this.querySelector('img');
-            const title = this.querySelector('.gallery-overlay h4').textContent;
-            const description = this.querySelector('.gallery-overlay p').textContent;
+            const titleEl = this.querySelector('.gallery-overlay h4');
+            const descEl = this.querySelector('.gallery-overlay p');
             
-            openLightbox(img.src, title, description);
+            if (img && titleEl && descEl) {
+                const title = titleEl.textContent;
+                const description = descEl.textContent;
+                openLightbox(img.src, title, description);
+            }
         });
     });
 });
 
 function openLightbox(imageSrc, title, description) {
-    // Create lightbox overlay
     const lightbox = document.createElement('div');
     lightbox.className = 'lightbox-overlay';
     lightbox.innerHTML = `
@@ -114,70 +119,22 @@ function openLightbox(imageSrc, title, description) {
         </div>
     `;
     
-    // Add lightbox styles
-    lightbox.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2000;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    `;
-    
-    const lightboxContent = lightbox.querySelector('.lightbox-content');
-    lightboxContent.style.cssText = `
-        position: relative;
-        max-width: 90%;
-        max-height: 90%;
-        text-align: center;
-    `;
-    
-    const lightboxImg = lightbox.querySelector('img');
-    lightboxImg.style.cssText = `
-        max-width: 100%;
-        max-height: 80vh;
-        object-fit: contain;
-        border-radius: 10px;
-    `;
-    
-    const lightboxClose = lightbox.querySelector('.lightbox-close');
-    lightboxClose.style.cssText = `
-        position: absolute;
-        top: -40px;
-        right: 0;
-        color: white;
-        font-size: 3rem;
-        cursor: pointer;
-        z-index: 2001;
-    `;
-    
-    const lightboxInfo = lightbox.querySelector('.lightbox-info');
-    lightboxInfo.style.cssText = `
-        color: white;
-        margin-top: 20px;
-    `;
-    
     document.body.appendChild(lightbox);
     
-    // Fade in effect
     setTimeout(() => {
         lightbox.style.opacity = '1';
     }, 10);
     
-    // Close lightbox functionality
     function closeLightbox() {
         lightbox.style.opacity = '0';
         setTimeout(() => {
-            document.body.removeChild(lightbox);
+            if (document.body.contains(lightbox)) {
+                document.body.removeChild(lightbox);
+            }
         }, 300);
     }
     
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
     lightboxClose.addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', function(e) {
         if (e.target === lightbox) {
@@ -185,7 +142,6 @@ function openLightbox(imageSrc, title, description) {
         }
     });
     
-    // Close with Escape key
     document.addEventListener('keydown', function escapeHandler(e) {
         if (e.key === 'Escape') {
             closeLightbox();
@@ -195,68 +151,146 @@ function openLightbox(imageSrc, title, description) {
 }
 
 // Newsletter Form Submission
-document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const email = this.querySelector('input[type="email"]').value;
-    const button = this.querySelector('button');
-    const originalButtonText = button.textContent;
-    
-    // Show loading state
-    button.textContent = 'Subscribing...';
-    button.disabled = true;
-    
-    // Simulate API call
-    setTimeout(() => {
-        // Create success message
-        showMessage('Thank you for subscribing! You\'ll receive our newsletter soon.', 'success', this);
+const newsletterForm = document.getElementById('newsletterForm');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
         
-        // Reset form
-        this.reset();
-        button.textContent = originalButtonText;
-        button.disabled = false;
-    }, 1500);
-});
+        const email = this.querySelector('input[type="email"]').value;
+        const button = this.querySelector('button');
+        const originalButtonText = button.textContent;
+        
+        button.textContent = 'Subscribing...';
+        button.disabled = true;
+        
+        setTimeout(() => {
+            showMessage('Thank you for subscribing! You\'ll receive our newsletter soon.', 'success', this);
+            this.reset();
+            button.textContent = originalButtonText;
+            button.disabled = false;
+        }, 1500);
+    });
+}
 
 // Contact Form Submission
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const button = this.querySelector('button[type="submit"]');
+        const originalButtonText = button.innerHTML;
+        
+        button.innerHTML = '<span>Sending...</span>';
+        button.disabled = true;
+        
+        setTimeout(() => {
+            showMessage('Thank you for your message! I\'ll get back to you within 24 hours.', 'success', this);
+            this.reset();
+            button.innerHTML = originalButtonText;
+            button.disabled = false;
+        }, 2000);
+    });
+}
+
+// Booking Form Submission
+const bookingForm = document.getElementById('bookingForm');
+if (bookingForm) {
+    // Show partner info for weddings/couples
+    const packageSelect = document.getElementById('package');
+    const partnerInfo = document.getElementById('partnerInfo');
     
-    const formData = new FormData(this);
-    const button = this.querySelector('button[type="submit"]');
-    const originalButtonText = button.textContent;
-    
-    // Validate form
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
-    const service = formData.get('service');
-    
-    if (!name || !email || !message || !service) {
-        showMessage('Please fill in all required fields.', 'error', this);
-        return;
+    if (packageSelect && partnerInfo) {
+        packageSelect.addEventListener('change', function() {
+            if (this.value === 'wedding' || this.value === 'engagement') {
+                partnerInfo.style.display = 'block';
+            } else {
+                partnerInfo.style.display = 'none';
+            }
+        });
     }
     
-    // Show loading state
-    button.textContent = 'Sending...';
-    button.disabled = true;
-    
-    // Simulate API call
-    setTimeout(() => {
-        // Create success message
-        showMessage('Thank you for your message! I\'ll get back to you within 24 hours.', 'success', this);
+    bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
         
-        // Reset form
-        this.reset();
-        button.textContent = originalButtonText;
-        button.disabled = false;
-    }, 2000);
+        const button = this.querySelector('button[type="submit"]');
+        const originalButtonText = button.innerHTML;
+        
+        button.innerHTML = '<span>Submitting...</span>';
+        button.disabled = true;
+        
+        setTimeout(() => {
+            showMessage('Thank you for your booking request! I\'ll review your details and respond within 24 hours with availability and next steps.', 'success', this);
+            this.reset();
+            button.innerHTML = originalButtonText;
+            button.disabled = false;
+            if (partnerInfo) partnerInfo.style.display = 'none';
+        }, 2500);
+    });
+}
+
+// FAQ Accordion
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', function() {
+            const isActive = item.classList.contains('active');
+            
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
 });
 
+// Package Selection on Book Page
+document.addEventListener('DOMContentLoaded', function() {
+    const packageButtons = document.querySelectorAll('.package-btn');
+    const packageSelect = document.getElementById('package');
+    
+    packageButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const packageType = this.getAttribute('data-package');
+            if (packageSelect) {
+                packageSelect.value = packageType;
+                
+                // Scroll to booking form
+                const bookingSection = document.querySelector('.booking-form-section');
+                if (bookingSection) {
+                    bookingSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
+
+// Load More Reviews
+const loadMoreBtn = document.getElementById('loadMoreBtn');
+if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', function() {
+        // Simulate loading more reviews
+        this.textContent = 'Loading...';
+        
+        setTimeout(() => {
+            this.textContent = 'All Reviews Loaded';
+            this.disabled = true;
+            showMessage('All available reviews have been loaded!', 'success');
+        }, 1000);
+    });
+}
+
 // Helper function to show messages
-function showMessage(text, type, form) {
+function showMessage(text, type, form = null) {
     // Remove existing message
-    const existingMessage = form.querySelector('.message');
+    const existingMessage = document.querySelector('.message');
     if (existingMessage) {
         existingMessage.remove();
     }
@@ -266,8 +300,12 @@ function showMessage(text, type, form) {
     message.className = `message ${type}`;
     message.textContent = text;
     
-    // Insert message after form
-    form.parentNode.insertBefore(message, form.nextSibling);
+    // Insert message
+    if (form) {
+        form.parentNode.insertBefore(message, form.nextSibling);
+    } else {
+        document.body.appendChild(message);
+    }
     
     // Show message with animation
     setTimeout(() => {
@@ -287,14 +325,20 @@ function showMessage(text, type, form) {
     }, 5000);
 }
 
-// CTA Button in Hero Section
-document.querySelector('.cta-button').addEventListener('click', function() {
-    document.querySelector('#gallery').scrollIntoView({
-        behavior: 'smooth'
-    });
+// CTA Button functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton && ctaButton.textContent.includes('View My Work')) {
+        ctaButton.addEventListener('click', function() {
+            const gallery = document.querySelector('.featured-gallery');
+            if (gallery) {
+                gallery.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 });
 
-// Intersection Observer for Animation on Scroll
+// Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -309,9 +353,9 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Observe elements for scroll animations
+// Initialize scroll animations
 document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.gallery-item, .review-card, .about-text, .contact-info, .contact-form');
+    const animatedElements = document.querySelectorAll('.gallery-item, .review-card, .about-content, .contact-info, .contact-form, .booking-step, .package-card');
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';
@@ -321,61 +365,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Stats Counter Animation
-function animateStats() {
-    const stats = document.querySelectorAll('.stat h3');
-    
-    stats.forEach(stat => {
-        const target = parseInt(stat.textContent.replace('+', ''));
-        let current = 0;
-        const increment = target / 50;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            stat.textContent = Math.floor(current) + '+';
-        }, 30);
-    });
-}
-
-// Trigger stats animation when About section is visible
-const aboutSection = document.querySelector('.about-section');
-const statsObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateStats();
-            statsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-if (aboutSection) {
-    statsObserver.observe(aboutSection);
-}
-
-// Parallax Effect for Hero Section
-window.addEventListener('scroll', function() {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    const rate = scrolled * -0.5;
-    
-    if (hero) {
-        hero.style.transform = `translateY(${rate}px)`;
-    }
-});
-
-// Add loading animation to gallery images
+// Set minimum date for booking forms
 document.addEventListener('DOMContentLoaded', function() {
-    const galleryImages = document.querySelectorAll('.gallery-item img');
+    const dateInputs = document.querySelectorAll('input[type="date"]');
+    const today = new Date().toISOString().split('T')[0];
     
-    galleryImages.forEach(img => {
-        img.addEventListener('load', function() {
-            this.style.opacity = '1';
-        });
-        
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.3s ease';
+    dateInputs.forEach(input => {
+        input.min = today;
     });
 });

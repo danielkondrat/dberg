@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Session - Bergmann Productions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>Bergmann Productions</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="reviews.html" class="nav-link">Reviews</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="book.html" class="nav-link active book-btn">Book a Session</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1920&h=800&fit=crop" alt="Book Your Photography Session">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1>Book Your Session</h1>
+                    <p>Let's capture your story together</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Steps -->
+    <section class="booking-steps">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps-grid">
+                <div class="booking-step">
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h4>1. Choose Your Date</h4>
+                    <p>Select your preferred date and session type from available options</p>
+                </div>
+                <div class="booking-step">
+                    <div class="step-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h4>2. Consultation Call</h4>
+                    <p>We'll discuss your vision, location preferences, and any special requests</p>
+                </div>
+                <div class="booking-step">
+                    <div class="step-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h4>3. Your Session</h4>
+                    <p>Relax and enjoy while I capture beautiful, authentic moments</p>
+                </div>
+                <div class="booking-step">
+                    <div class="step-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h4>4. Gallery Delivery</h4>
+                    <p>Receive your professionally edited photos in a private online gallery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Packages -->
+    <section class="packages-section">
+        <div class="container">
+            <h2>Photography Packages</h2>
+            <div class="packages-grid">
+                <!-- Wedding Package -->
+                <div class="package-card featured">
+                    <div class="package-badge">Most Popular</div>
+                    <div class="package-header">
+                        <h3>Wedding Photography</h3>
+                        <div class="package-price">Starting at $3,500</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> 8 hours of coverage</li>
+                            <li><i class="fas fa-check"></i> Engagement session included</li>
+                            <li><i class="fas fa-check"></i> 500+ edited high-res photos</li>
+                            <li><i class="fas fa-check"></i> Online gallery & print release</li>
+                            <li><i class="fas fa-check"></i> USB drive with all images</li>
+                            <li><i class="fas fa-check"></i> Timeline planning assistance</li>
+                        </ul>
+                    </div>
+                    <button class="package-btn" data-package="wedding">Select Wedding Package</button>
+                </div>
+
+                <!-- Portrait Package -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Portrait Sessions</h3>
+                        <div class="package-price">Starting at $450</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> 1-2 hour session</li>
+                            <li><i class="fas fa-check"></i> Up to 6 people</li>
+                            <li><i class="fas fa-check"></i> 50+ edited photos</li>
+                            <li><i class="fas fa-check"></i> Online gallery access</li>
+                            <li><i class="fas fa-check"></i> Print release included</li>
+                            <li><i class="fas fa-check"></i> Location scouting help</li>
+                        </ul>
+                    </div>
+                    <button class="package-btn" data-package="portrait">Select Portrait Session</button>
+                </div>
+
+                <!-- Corporate Package -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Corporate Headshots</h3>
+                        <div class="package-price">Starting at $200</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Professional studio or office</li>
+                            <li><i class="fas fa-check"></i> Multiple outfit options</li>
+                            <li><i class="fas fa-check"></i> 10+ edited photos per person</li>
+                            <li><i class="fas fa-check"></i> Quick 48-hour turnaround</li>
+                            <li><i class="fas fa-check"></i> LinkedIn-optimized sizing</li>
+                            <li><i class="fas fa-check"></i> Group discounts available</li>
+                        </ul>
+                    </div>
+                    <button class="package-btn" data-package="corporate">Select Corporate Package</button>
+                </div>
+
+                <!-- Event Package -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Event Photography</h3>
+                        <div class="package-price">Starting at $1,200</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> 4+ hours of coverage</li>
+                            <li><i class="fas fa-check"></i> Candid & posed shots</li>
+                            <li><i class="fas fa-check"></i> 200+ edited photos</li>
+                            <li><i class="fas fa-check"></i> Same-day sneak peeks</li>
+                            <li><i class="fas fa-check"></i> Social media ready images</li>
+                            <li><i class="fas fa-check"></i> Event timeline coordination</li>
+                        </ul>
+                    </div>
+                    <button class="package-btn" data-package="event">Select Event Package</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="booking-form-section">
+        <div class="container">
+            <div class="booking-container">
+                <div class="booking-header">
+                    <h2>Reserve Your Session</h2>
+                    <p>Fill out the form below to check availability and secure your date with a 50% deposit.</p>
+                </div>
+
+                <form class="booking-form" id="bookingForm">
+                    <!-- Package Selection -->
+                    <div class="form-section">
+                        <h3>Session Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="package">Package Type *</label>
+                                <select id="package" name="package" required>
+                                    <option value="">Select a package</option>
+                                    <option value="wedding">Wedding Photography ($3,500+)</option>
+                                    <option value="engagement">Engagement Session ($450)</option>
+                                    <option value="portrait">Portrait Session ($450+)</option>
+                                    <option value="family">Family Photography ($550)</option>
+                                    <option value="corporate">Corporate Headshots ($200+)</option>
+                                    <option value="event">Event Photography ($1,200+)</option>
+                                    <option value="custom">Custom Package (Let's discuss)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="sessionDate">Preferred Date *</label>
+                                <input type="date" id="sessionDate" name="sessionDate" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="alternateDate">Backup Date</label>
+                                <input type="date" id="alternateDate" name="alternateDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="sessionTime">Preferred Time</label>
+                                <select id="sessionTime" name="sessionTime">
+                                    <option value="">Any time</option>
+                                    <option value="sunrise">Sunrise (6:00-8:00 AM)</option>
+                                    <option value="morning">Morning (8:00-11:00 AM)</option>
+                                    <option value="afternoon">Afternoon (12:00-4:00 PM)</option>
+                                    <option value="golden-hour">Golden Hour (5:00-7:00 PM)</option>
+                                    <option value="evening">Evening (7:00-9:00 PM)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Location Preference</label>
+                            <input type="text" id="location" name="location" placeholder="Specific venue, city, or 'flexible'">
+                        </div>
+                    </div>
+
+                    <!-- Client Information -->
+                    <div class="form-section">
+                        <h3>Your Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="clientFirstName">First Name *</label>
+                                <input type="text" id="clientFirstName" name="clientFirstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="clientLastName">Last Name *</label>
+                                <input type="text" id="clientLastName" name="clientLastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="clientEmail">Email Address *</label>
+                                <input type="email" id="clientEmail" name="clientEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="clientPhone">Phone Number *</label>
+                                <input type="tel" id="clientPhone" name="clientPhone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" id="partnerInfo" style="display: none;">
+                            <label for="partnerName">Partner's Name (for weddings/couples)</label>
+                            <input type="text" id="partnerName" name="partnerName">
+                        </div>
+                    </div>
+
+                    <!-- Event Details -->
+                    <div class="form-section">
+                        <h3>Tell Me About Your Vision</h3>
+                        <div class="form-group">
+                            <label for="eventDescription">Describe your session/event *</label>
+                            <textarea id="eventDescription" name="eventDescription" rows="4" placeholder="Tell me about your vision, style preferences, number of people, special moments to capture..." required></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guestCount">Number of People</label>
+                                <select id="guestCount" name="guestCount">
+                                    <option value="">Select</option>
+                                    <option value="1">Just me</option>
+                                    <option value="2">2 people</option>
+                                    <option value="3-5">3-5 people</option>
+                                    <option value="6-10">6-10 people</option>
+                                    <option value="11-25">11-25 people</option>
+                                    <option value="26-50">26-50 people</option>
+                                    <option value="51-100">51-100 people</option>
+                                    <option value="100+">100+ people</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Budget Range</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Prefer not to say</option>
+                                    <option value="under-500">Under $500</option>
+                                    <option value="500-1000">$500 - $1,000</option>
+                                    <option value="1000-2500">$1,000 - $2,500</option>
+                                    <option value="2500-5000">$2,500 - $5,000</option>
+                                    <option value="5000+">$5,000+</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="specialRequests">Special Requests or Questions</label>
+                            <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Any specific shots you want, accessibility needs, timeline concerns, etc."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Agreement -->
+                    <div class="form-section">
+                        <div class="agreement-section">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+                                <span class="checkmark"></span>
+                                I understand that a 50% deposit is required to secure my date and the remaining balance is due before the session. I agree to the terms and conditions.
+                            </label>
+                            
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="marketingConsent" name="marketingConsent">
+                                <span class="checkmark"></span>
+                                I'd like to receive photography tips, session updates, and special offers via email.
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn primary">
+                            <span>Submit Booking Request</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <p class="form-note">You'll receive a response within 24 hours with availability confirmation and payment details.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact -->
+    <section class="quick-contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Have Questions First?</h2>
+                <p>Not ready to book but want to chat about your vision? I'd love to hear from you.</p>
+                <div class="contact-options">
+                    <a href="contact.html" class="secondary-btn">Send a Message</a>
+                    <a href="tel:+15551234567" class="phone-btn">
+                        <i class="fas fa-phone"></i>
+                        Call (555) 123-4567
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bergmann Productions</h3>
+                    <p>Professional photography services capturing life's most beautiful moments with artistry and passion.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="book.html">Wedding Photography</a></li>
+                        <li><a href="book.html">Portrait Sessions</a></li>
+                        <li><a href="book.html">Event Photography</a></li>
+                        <li><a href="book.html">Corporate Headshots</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Dylan</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="book.html">Book a Session</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bergmann Productions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
