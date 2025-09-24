@@ -116,8 +116,8 @@ a {
 }
 
 .book-btn {
-    background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
-    color: #ffffff !important;
+    background: #ffffff;
+    color: #000000 !important;
     padding: 12px 24px;
     border-radius: 30px;
     font-weight: 600;
@@ -474,9 +474,10 @@ a {
 
 .about-image img {
     width: 100%;
-    height: 500px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
 }
 
 .about-image:hover img {
@@ -821,6 +822,7 @@ a {
     margin-bottom: 2rem;
     font-weight: 700;
     letter-spacing: -0.02em;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .about-story p {
