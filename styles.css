@@ -167,104 +167,95 @@ a {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Hero Section */
-.hero {
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-}
-
-.hero-image {
+/* === Base Page Hero === */
+.page-hero {
     position: relative;
     width: 100%;
-    height: 80vh; /* adjust height as needed */
     overflow: hidden;
-}
-
-.hero-image,
-.page-hero .hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-}
-
-.hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* ensures video fills the container */
-    transform: translate(-50%, -50%);
-    z-index: 0;
-}
-
-.hero-image img,
-.page-hero .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.5) contrast(1.1);
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.35); /* dark overlay to make text visible */
-    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    color: #fff;
 }
 
-.hero-overlay,
+/* === Landing Page Hero (Video) === */
+.page-hero.landing {
+    height: 100vh;
+}
+
+.page-hero.landing .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.page-hero.landing .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* === Inner Page Hero (About, Reviews, etc.) === */
+.page-hero.inner {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem; /* top/bottom space */
+}
+
+/* Background image */
+.page-hero.inner .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.page-hero.inner .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay for both hero types */
 .page-hero .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
-    z-index: -1;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+    z-index: 1;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: #fff;
-    padding: 0 20px;
-}
-
-.hero-content p {
-    font-size: 1.5rem;
-}
-
-.hero-content,
+/* Hero Content */
 .page-hero .hero-content {
     position: relative;
-    z-index: 1;
-    text-align: center;
-    color: #ffffff;
+    z-index: 2;
     max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
     padding: 0 2rem;
 }
 
-.hero-content h1,
+/* Hero Text */
 .page-hero .hero-content h1 {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
     margin-bottom: 1.5rem;
     font-weight: 700;
-    line-height: 1.1;
     letter-spacing: -0.02em;
     background: linear-gradient(135deg, #ffffff 0%, #e4e6ea 100%);
     -webkit-background-clip: text;
@@ -272,28 +263,21 @@ a {
     background-clip: text;
 }
 
-.hero-content p,
 .page-hero .hero-content p {
     font-size: clamp(1.1rem, 3vw, 1.4rem);
-    margin-bottom: 2.5rem;
-    opacity: 0.95;
     line-height: 1.6;
-    color: #e4e6ea;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    margin: 0 auto;
 }
 
-/* Page Hero (for other pages) */
-.page-hero {
-    height: 60vh;
-    margin-top: 80px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    min-height: 400px;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: clamp(2rem, 7vw, 3rem);
+    }
+    .hero-content p {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
 }
 
 /* Buttons */
