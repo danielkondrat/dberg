@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Bergmann Productions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>Bergmann Productions</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="reviews.html" class="nav-link">Reviews</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="book.html" class="nav-link book-btn">Book a Session</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero inner">
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1600&h=800&fit=crop" alt="Photography Gallery">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Portfolio Gallery</h1>
+            <p>Explore a curated selection of our finest photography work across various styles and occasions</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="gallery-filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All Work</button>
+                <button class="filter-btn" data-filter="wedding">Weddings</button>
+                <button class="filter-btn" data-filter="portrait">Portraits</button>
+                <button class="filter-btn" data-filter="event">Events</button>
+                <button class="filter-btn" data-filter="corporate">Corporate</button>
+                <button class="filter-btn" data-filter="family">Family</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Gallery Section -->
+    <section class="main-gallery">
+        <div class="container">
+            <div class="gallery-masonry">
+                <!-- Wedding Photos -->
+                <div class="gallery-item" data-category="wedding">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500&h=600&fit=crop" alt="Wedding Ceremony">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Romantic Wedding Ceremony</h4>
+                            <p>Sarah & Mark's special day</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="wedding">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=500&h=400&fit=crop" alt="Wedding Reception">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Reception Celebration</h4>
+                            <p>Dancing the night away</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="wedding">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=500&h=700&fit=crop" alt="Wedding Details">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Wedding Details</h4>
+                            <p>Every moment captured</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portrait Photos -->
+                <div class="gallery-item" data-category="portrait">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&h=600&fit=crop" alt="Professional Portrait">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Professional Portrait</h4>
+                            <p>Executive headshot session</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="portrait">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop" alt="Creative Portrait">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Creative Portrait</h4>
+                            <p>Artistic expression</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="portrait">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=650&fit=crop" alt="Fashion Portrait">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Fashion Portrait</h4>
+                            <p>Style and elegance</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Photos -->
+                <div class="gallery-item" data-category="event">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=500&h=400&fit=crop" alt="Corporate Event">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Corporate Gala</h4>
+                            <p>Annual company celebration</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="event">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=500&h=600&fit=crop" alt="Birthday Celebration">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Birthday Celebration</h4>
+                            <p>Milestone moments</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="event">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=500&h=700&fit=crop" alt="Conference Event">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Conference Coverage</h4>
+                            <p>Professional documentation</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corporate Photos -->
+                <div class="gallery-item" data-category="corporate">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=450&fit=crop" alt="Corporate Headshots">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Corporate Headshots</h4>
+                            <p>Professional team photos</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="corporate">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&h=550&fit=crop" alt="Business Meeting">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Executive Meeting</h4>
+                            <p>Behind the scenes</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Photos -->
+                <div class="gallery-item" data-category="family">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&h=600&fit=crop" alt="Family Portrait">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Family Portrait</h4>
+                            <p>Generational memories</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="family">
+                    <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=500&h=500&fit=crop" alt="Children Photography">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Children's Session</h4>
+                            <p>Pure joy captured</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="family">
+                    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=500&h=650&fit=crop" alt="Maternity Session">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Maternity Session</h4>
+                            <p>Expecting beauty</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Mixed Category Items -->
+                <div class="gallery-item" data-category="wedding">
+                    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=500&h=450&fit=crop" alt="Outdoor Wedding">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Garden Wedding</h4>
+                            <p>Natural beauty</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="portrait">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=700&fit=crop" alt="Male Portrait">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Professional Headshot</h4>
+                            <p>Executive portrait</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="event">
+                    <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=500&h=550&fit=crop" alt="Graduation">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Graduation Day</h4>
+                            <p>Achievement celebration</p>
+                            <div class="overlay-actions">
+                                <button class="view-btn" onclick="openLightbox(this)"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img src="" alt="" id="lightbox-img">
+            <div class="lightbox-info">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description"></p>
+            </div>
+            <div class="lightbox-nav">
+                <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <section class="gallery-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Create Your Story?</h2>
+                <p>Let's discuss how we can capture your special moments with the same attention to detail and artistry you see in our gallery.</p>
+                <div class="cta-buttons">
+                    <a href="book.html" class="cta-button">Book Your Session</a>
+                    <a href="contact.html" class="secondary-btn">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bergmann Productions</h3>
+                    <p>Professional photography services capturing life's most beautiful moments with artistry and passion.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="book.html">Wedding Photography</a></li>
+                        <li><a href="book.html">Portrait Sessions</a></li>
+                        <li><a href="book.html">Event Photography</a></li>
+                        <li><a href="book.html">Corporate Headshots</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Dylan</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bergmann Productions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
