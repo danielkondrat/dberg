@@ -7,6 +7,59 @@
     box-sizing: border-box;
 }
 
+:root {
+    --c1: #3b5a7c;
+    --c2: #7aa3c4;
+    --c1-hover: #4a6b8f;
+    --c2-hover: #8ab5d6;
+    --box-shadow-color: rgba(59, 90, 124, 0.4);
+}
+
+.standard-btn {
+    background: transparent;
+    color: #fff;
+    padding: 15px 35px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.standard-btn:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+}
+
+.standard-btn2 {
+    background: transparent;
+    border: 2px solid #333;
+    color: #b0b3b8;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: inherit;
+}
+
+.standard-btn2:hover, .standard-btn2:active {
+    background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--box-shadow-color);
+}
+
 body {
     /* font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; */
     font-family: "Merriweather";
@@ -27,11 +80,15 @@ html {
     padding: 0 20px;
 }
 
+.text-center {
+    text-align: center;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.2;
-    color: #ffffff;
+    color: #fff;
 }
 
 p {
@@ -67,11 +124,11 @@ a {
 }
 
 .logo h2 {
-    color: #ffffff;
+    color: #fff;
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #ffffff, #e4e6ea);
+    background: linear-gradient(135deg, #fff, #e4e6ea);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -97,7 +154,7 @@ a {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #ffffff;
+    color: #fff;
 }
 
 .nav-link::after {
@@ -107,7 +164,7 @@ a {
     left: 0;
     width: 0;
     height: 2px;
-    background: #ffffff;
+    background: #fff;
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -117,8 +174,8 @@ a {
 }
 
 .book-btn {
-    background: #ffffff;
-    color: #000000 !important;
+    background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
+    color: #fff !important;
     padding: 12px 24px;
     border-radius: 30px;
     font-weight: 600;
@@ -126,7 +183,6 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
 }
 
 .book-btn::after {
@@ -135,8 +191,8 @@ a {
 
 .book-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
-    background: linear-gradient(135deg, #ff5252 0%, #26a69a 100%);
+    box-shadow: 0 8px 15px rgba(51, 102, 204, 0.2);
+    background: linear-gradient(135deg, #4a6b8f  0%, #8ab5d6  100%);  
 }
 
 /* Mobile Navigation */
@@ -252,7 +308,7 @@ a {
     margin-bottom: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #ffffff 0%, #e4e6ea 100%);
+    background: linear-gradient(135deg, #fff 0%, #e4e6ea 100%);
     -webkit-background-clip: text;
     background-clip: text;
     padding: 1px;
@@ -268,8 +324,8 @@ a {
 
 /* Buttons */
 .cta-button {
-    background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
-    color: #ffffff;
+    background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
+    color: #fff;
     padding: 18px 40px;
     border: none;
     border-radius: 50px;
@@ -281,20 +337,20 @@ a {
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 4px 8px rgba(51, 102, 204, 0.2);
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(255, 107, 107, 0.4);
-    background: linear-gradient(135deg, #ff5252 0%, #26a69a 100%);
+    box-shadow: 0 12px 40px var(--box-shadow-color);
+    background: linear-gradient(135deg, var(--c1-hover) 0%, var(--c2-hover) 100%);  
 }
 
 .secondary-btn {
     background: transparent;
-    color: #4ecdc4;
+    color: #fff;
     padding: 15px 35px;
-    border: 2px solid #4ecdc4;
+    border: 2px solid #fff;
     border-radius: 50px;
     font-size: 1rem;
     font-weight: 600;
@@ -307,33 +363,10 @@ a {
 }
 
 .secondary-btn:hover {
-    background: #4ecdc4;
+    background: #fff;
     color: #0a0a0a;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
-}
-
-.learn-more-btn {
-    background: transparent;
-    color: #ffffff;
-    padding: 15px 35px;
-    border: 2px solid #ffffff;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    text-decoration: none;
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.learn-more-btn:hover {
-    background: #ffffff;
-    color: #000000;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+    box-shadow: 0 1px 25px rgba(255, 255, 255, 0.15);
 }
 
 /* Featured Gallery Section */
@@ -357,7 +390,7 @@ a {
     text-align: center;
     font-size: clamp(2.5rem, 6vw, 3.5rem);
     margin-bottom: 4rem;
-    color: #ffffff;
+    color: #fff;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
@@ -403,7 +436,7 @@ a {
     left: 0;
     right: 0;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 50%, transparent 100%);
-    color: #ffffff;
+    color: #fff;
     padding: 40px 25px 25px;
     transform: translateY(100%);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -441,7 +474,7 @@ a {
 .about-text h2 {
     font-size: clamp(2.5rem, 6vw, 3.5rem);
     margin-bottom: 2rem;
-    color: #ffffff;
+    color: #fff;
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.2;
@@ -506,7 +539,7 @@ a {
     text-align: center;
     font-size: clamp(2.5rem, 6vw, 3.5rem);
     margin-bottom: 4rem;
-    color: #ffffff;
+    color: #fff;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
@@ -535,7 +568,7 @@ a {
     left: 0;
     right: 0;
     height: 3px;
-    background: #ffffff;
+    background: var(--c2-hover  );
     transform: scaleX(0);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -585,7 +618,7 @@ a {
 }
 
 .reviewer h4 {
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 5px;
     font-weight: 600;
     font-size: 1rem;
@@ -603,27 +636,11 @@ a {
 /* Newsletter Section */
 .newsletter-section {
     padding: 100px 0;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    color: #ffffff;
+    background: #1a1a1a;
+    color: #fff;
     text-align: center;
     position: relative;
     overflow: hidden;
-}
-
-.newsletter-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
-    animation: pulse 8s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.1) rotate(180deg); }
 }
 
 .newsletter-content {
@@ -655,7 +672,7 @@ a {
 
 .input-group {
     display: flex;
-    background: #ffffff;
+    background: #fff;
     border-radius: 50px;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
@@ -672,7 +689,7 @@ a {
     border: none;
     outline: none;
     font-size: 1.1rem;
-    background: #ffffff;
+    background: #fff;
     color: #333;
     font-family: inherit;
 }
@@ -682,9 +699,10 @@ a {
 }
 
 .input-group button {
-    background: #ffffff;
-    color: #ffffff;
+    background: linear-gradient(135deg, #3b5a7c 0%, #7aa3c4   100%);
+    color: #fff;
     border: none;
+    outline: none;
     padding: 18px 35px;
     cursor: pointer;
     font-weight: 600;
@@ -696,7 +714,7 @@ a {
 }
 
 .input-group button:hover {
-    background: linear-gradient(135deg, #ff5252, #26a69a);
+    background: linear-gradient(135deg, #4a6b8f  0%, #8ab5d6  100%);  
 }
 
 .newsletter-disclaimer {
@@ -723,7 +741,7 @@ a {
 .footer-section h3,
 .footer-section h4 {
     margin-bottom: 25px;
-    color: #ffffff;
+    color: #fff;
     font-weight: 600;
 }
 
@@ -756,8 +774,8 @@ a {
 }
 
 .social-links a:hover {
-    background: #ffffff;
-    color: #ffffff;
+    background: #fff;
+    color: #000;
     transform: translateY(-3px);
     border-color: transparent;
 }
@@ -784,12 +802,12 @@ a {
     left: 0;
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    color: #ff6b6b;
+    color: #fff;
 }
 
 .footer-section ul li a:hover {
     opacity: 1;
-    color: #ffffff;
+    color: #fff;
     padding-left: 20px;
 }
 
@@ -819,7 +837,7 @@ a {
 
 .about-story h2 {
     font-size: clamp(2rem, 5vw, 3rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 2rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -839,7 +857,7 @@ a {
 
 .specialties h3 {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 2.5rem;
     font-weight: 600;
 }
@@ -867,13 +885,13 @@ a {
 
 .specialty-item i {
     font-size: 2.5rem;
-    color: #ff6b6b;
+    color: var(--c2-hover);
     margin-bottom: 1rem;
 }
 
 .specialty-item h4 {
     font-size: 1.3rem;
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -916,13 +934,13 @@ a {
 
 .profile-content h3 {
     font-size: 1.8rem;
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
 .profile-content .title {
-    color: #ff6b6b;
+    color: var(--c2-hover);
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
     font-weight: 500;
@@ -942,7 +960,7 @@ a {
 .stat-number {
     display: block;
     font-size: 2rem;
-    color: #4ecdc4;
+    color: var(--c2-hover);
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
@@ -967,14 +985,14 @@ a {
 }
 
 .equipment-card h4 {
-    color: #ffffff;
+    color: #fff;
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
 }
 
 .equipment-card h4 i {
-    color: #4ecdc4;
+    color: var(--c2-hover);
     margin-right: 10px;
 }
 
@@ -996,14 +1014,14 @@ a {
 }
 
 .equipment-card li:hover {
-    color: #ffffff;
+    color: #fff;
 }
 
 .equipment-card li::before {
     content: '→';
     position: absolute;
     left: 0;
-    color: #ff6b6b;
+    color: var(--c2-hover);
     font-weight: bold;
 }
 
@@ -1027,7 +1045,7 @@ a {
 .behind-scenes h2 {
     text-align: center;
     font-size: clamp(2.5rem, 6vw, 3.5rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 4rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -1069,7 +1087,7 @@ a {
 }
 
 .bts-content h4 {
-    color: #ffffff;
+    color: #fff;
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
@@ -1094,7 +1112,7 @@ a {
 
 .philosophy-content h2 {
     font-size: clamp(2.5rem, 6vw, 3.5rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 3rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -1113,7 +1131,7 @@ a {
 .philosophy-content blockquote::before {
     content: '"';
     font-size: 6rem;
-    color: #ff6b6b;
+    color: var(--c2-hover);
     position: absolute;
     top: -20px;
     left: -10px;
@@ -1122,7 +1140,7 @@ a {
 }
 
 .philosophy-content cite {
-    color: #4ecdc4;
+    color: var(--c2-hover);
     font-size: 1.2rem;
     font-weight: 600;
     font-style: normal;
@@ -1148,7 +1166,7 @@ a {
 .process-section h2 {
     text-align: center;
     font-size: clamp(2.5rem, 6vw, 3.5rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 4rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -1175,7 +1193,7 @@ a {
     right: -20px;
     width: 40px;
     height: 2px;
-    background: #ffffff;
+    background: #fff;
     z-index: 1;
 }
 
@@ -1186,8 +1204,8 @@ a {
 .step-number {
     width: 70px;
     height: 70px;
-    background: #ffffff;
-    color: #ffffff;
+    background: linear-gradient(135deg, var(--c1-hover) 0%, var(--c2-hover) 100%);
+    color: #000;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1197,11 +1215,11 @@ a {
     margin: 0 auto 1.5rem;
     position: relative;
     z-index: 2;
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
 }
 
 .step h4 {
-    color: #ffffff;
+    color: #fff;
     font-size: 1.3rem;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -1240,7 +1258,7 @@ a {
 
 .cta-content h2 {
     font-size: clamp(2.5rem, 6vw, 3.5rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -1297,26 +1315,26 @@ a {
 
 .stat-icon {
     font-size: 3rem;
-    color: #ff6b6b;
+    color: var(--c2-hover);
     margin-bottom: 1rem;
 }
 
 .stat-card:nth-child(2) .stat-icon {
-    color: #4ecdc4;
+    color: var(--c2-hover);
 }
 
 .stat-card:nth-child(3) .stat-icon {
-    color: #ffd700;
+    color: var(--c2-hover);
 }
 
 .stat-card:nth-child(4) .stat-icon {
-    color: #9b59b6;
+    color: var(--c2-hover);
 }
 
 .stat-number {
     font-size: 3rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 0.5rem;
     display: block;
 }
@@ -1335,7 +1353,7 @@ a {
 .reviews-main h2 {
     text-align: center;
     font-size: clamp(2.5rem, 6vw, 3.5rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 3rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -1362,15 +1380,15 @@ a {
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    font-family: inherit;
 }
 
 .review-filter .filter-btn:hover,
 .review-filter .filter-btn.active {
-    background: #ffffff;
-    border-color: transparent;
-    color: #ffffff;
+    background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
+    color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 8px 25px var(--box-shadow-color);
 }
 
 .reviews-container {
@@ -1384,7 +1402,7 @@ a {
 .review-card.featured {
     grid-column: 1 / -1;
     background: #1a1a1a;
-    border: 2px solid rgba(255, 107, 107, 0.3);
+    border: 2px solid var(--c2-hover);
     position: relative;
 }
 
@@ -1393,9 +1411,9 @@ a {
     position: absolute;
     top: -1px;
     left: 40px;
-    background: #ffffff;
-    color: #ffffff;
-    padding: 8px 20px;
+    background: var(--c2-hover);
+    color: #fff;
+    padding: 6px 20px;
     border-radius: 0 0 15px 15px;
     font-size: 0.9rem;
     font-weight: 600;
@@ -1425,14 +1443,14 @@ a {
 }
 
 .reviewer-details h4 {
-    color: #ffffff;
+    color: #fff;
     font-size: 1.2rem;
     margin-bottom: 5px;
     font-weight: 600;
 }
 
 .reviewer-details span {
-    color: #4ecdc4;
+    color: var(--c2-hover);
     font-size: 0.95rem;
     font-weight: 500;
     display: block;
@@ -1468,22 +1486,11 @@ a {
 }
 
 .reviews-cta {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    padding-top: 10px;
+    padding-bottom: 100px;
     text-align: center;
     position: relative;
     overflow: hidden;
-}
-
-.reviews-cta::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
-    animation: pulse 8s ease-in-out infinite;
 }
 
 .reviews-cta .cta-content {
@@ -1493,7 +1500,7 @@ a {
 
 .reviews-cta .cta-content h2 {
     font-size: clamp(2.5rem, 6vw, 3.5rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -1525,7 +1532,7 @@ a {
 
 .contact-details h2 {
     font-size: clamp(2rem, 5vw, 3rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -1563,28 +1570,28 @@ a {
 }
 
 .method-icon {
-    background: #ffffff;
+    color: #fff;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
+    background: var(--c2-hover);
     font-size: 1.2rem;
     flex-shrink: 0;
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 8px 25px var(--box-shadow-color);
 }
 
 .method-details h4 {
-    color: #ffffff;
+    color: #fff;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
 .method-details p {
-    color: #4ecdc4;
+    color: var(--c2-hover);
     font-size: 1.1rem;
     margin-bottom: 0.3rem;
     font-weight: 500;
@@ -1604,7 +1611,7 @@ a {
 }
 
 .social-contact h4 {
-    color: #ffffff;
+    color: #fff;
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
@@ -1631,11 +1638,11 @@ a {
 }
 
 .social-links-contact a:hover {
-    background: #ffffff;
-    color: #ffffff;
+    background: #fff;
+    color: #000;
     border-color: transparent;
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 8px 25px var(--box-shadow-color);
 }
 
 /* Contact Form */
@@ -1653,7 +1660,7 @@ a {
 }
 
 .form-header h3 {
-    color: #ffffff;
+    color: #fff;
     font-size: 2rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
@@ -1682,7 +1689,7 @@ a {
 }
 
 .form-group label {
-    color: #ffffff;
+    color: #fff;
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 8px;
@@ -1710,7 +1717,7 @@ a {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #ff6b6b;
+    border-color: var(--c2-hover);
     background: #202020;
     box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.1);
 }
@@ -1745,7 +1752,7 @@ a {
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark {
-    background: #ffffff;
+    background: #fff;
     border-color: transparent;
 }
 
@@ -1755,14 +1762,14 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #ffffff;
+    color: #fff;
     font-size: 12px;
     font-weight: bold;
 }
 
 .submit-btn {
-    background: #ffffff;
-    color: #ffffff;
+    background: #fff;
+    color: #fff;
     padding: 18px 40px;
     border: none;
     border-radius: 50px;
@@ -1815,7 +1822,7 @@ a {
 .faq-section h2 {
     text-align: center;
     font-size: clamp(2.5rem, 6vw, 3.5rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 4rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -1854,14 +1861,14 @@ a {
 }
 
 .faq-question h4 {
-    color: #ffffff;
+    color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
     margin: 0;
 }
 
 .faq-question i {
-    color: #ff6b6b;
+    color: var(--c2-hover);
     font-size: 1rem;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1915,7 +1922,7 @@ a {
 
 .ready-to-book .cta-content h2 {
     font-size: clamp(2.5rem, 6vw, 3.5rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -1937,7 +1944,7 @@ a {
 .booking-steps h2 {
     text-align: center;
     font-size: clamp(2.5rem, 6vw, 3.5rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 4rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -1970,19 +1977,19 @@ a {
 .step-icon {
     width: 80px;
     height: 80px;
-    background: #ffffff;
+    background: #fff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.5rem;
     font-size: 2rem;
-    color: #ffffff;
+    color: #fff;
     box-shadow: 0 15px 40px rgba(255, 107, 107, 0.3);
 }
 
 .booking-step h4 {
-    color: #ffffff;
+    color: #fff;
     font-size: 1.3rem;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -2002,7 +2009,7 @@ a {
 .packages-section h2 {
     text-align: center;
     font-size: clamp(2.5rem, 6vw, 3.5rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 4rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -2036,7 +2043,7 @@ a {
 }
 
 .package-card.featured {
-    border: 2px solid rgba(255, 107, 107, 0.5);
+    border: 2px solid var(--c2-hover);
     background: #1a1a1a;
     transform: scale(1.02);
 }
@@ -2050,15 +2057,15 @@ a {
     top: -1px;
     left: 50%;
     transform: translateX(-50%);
-    background: #ffffff;
-    color: #ffffff;
+    background: var(--c2-hover);
+    color: #fff;
     padding: 8px 25px;
     border-radius: 0 0 15px 15px;
     font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 5px 15px var(--box-shadow-color   );
 }
 
 .package-header {
@@ -2067,7 +2074,7 @@ a {
 }
 
 .package-header h3 {
-    color: #ffffff;
+    color: #fff;
     font-size: 2rem;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -2076,7 +2083,7 @@ a {
 .package-price {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #4ecdc4;
+    color: var(--c2-hover);
     margin-bottom: 0.5rem;
 }
 
@@ -2105,19 +2112,19 @@ a {
 }
 
 .package-features li:hover {
-    color: #ffffff;
+    color: #fff;
 }
 
 .package-features i {
-    color: #4ecdc4;
+    color: var(--c2-hover);
     font-size: 1.1rem;
     width: 20px;
     flex-shrink: 0;
 }
 
 .package-btn {
-    background: #ffffff;
-    color: #ffffff;
+    background: linear-gradient(135deg, var(--c1), var(--c2));
+    color: #fff;
     padding: 15px 30px;
     border: none;
     border-radius: 50px;
@@ -2128,13 +2135,13 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-family: inherit;
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 8px 25px var(--box-shadow-color);
 }
 
 .package-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
-    background: linear-gradient(135deg, #ff5252, #26a69a);
+    box-shadow: 0 12px 35px var(--box-shadow-color);
+    background: linear-gradient(135deg, var(--c1-hover), var(--c2-hover));
 }
 
 /* Booking Form Section */
@@ -2160,7 +2167,7 @@ a {
 
 .booking-header h2 {
     font-size: clamp(2rem, 5vw, 3rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 1rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -2186,7 +2193,7 @@ a {
 }
 
 .form-section h3 {
-    color: #ffffff;
+    color: #fff;
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
@@ -2206,8 +2213,8 @@ a {
 }
 
 .form-actions .submit-btn {
-    background: #ffffff;
-    color: #ffffff;
+    background: #fff;
+    color: #fff;
     padding: 20px 50px;
     border: none;
     border-radius: 50px;
@@ -2273,7 +2280,7 @@ a {
 
 .quick-contact .contact-content h2 {
     font-size: clamp(2.5rem, 6vw, 3.5rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -2296,9 +2303,9 @@ a {
 
 .phone-btn {
     background: transparent;
-    color: #4ecdc4;
+    color: var(--c2-hover);
     padding: 15px 35px;
-    border: 2px solid #4ecdc4;
+    border: 2px solid var(--c2-hover);
     border-radius: 50px;
     font-size: 1.1rem;
     font-weight: 600;
@@ -2314,7 +2321,7 @@ a {
 }
 
 .phone-btn:hover {
-    background: #4ecdc4;
+    background: var(--c2-hover);
     color: #0a0a0a;
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
@@ -2427,11 +2434,10 @@ a {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: #ffffff;
-    border-color: transparent;
-    color: #000000;
+    background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
+    color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 8px 25px var(--box-shadow-color);
 }
 
 /* Main Gallery Section */
@@ -2484,7 +2490,7 @@ a {
     right: 0;
     bottom: 0;
     background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.9) 100%);
-    color: #ffffff;
+    color: #fff;
     opacity: 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
@@ -2504,7 +2510,7 @@ a {
     font-size: 1.3rem;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #ffffff;
+    color: #fff;
 }
 
 .overlay-content p {
@@ -2523,7 +2529,7 @@ a {
 .view-btn {
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #ffffff;
+    color: #fff;
     padding: 8px 12px;
     border-radius: 8px;
     cursor: pointer;
@@ -2581,7 +2587,7 @@ a {
     position: absolute;
     top: -50px;
     right: 0;
-    color: #ffffff;
+    color: #fff;
     font-size: 2rem;
     font-weight: 300;
     cursor: pointer;
@@ -2613,7 +2619,7 @@ a {
 
 .lightbox-info {
     margin-top: 20px;
-    color: #ffffff;
+    color: #fff;
 }
 
 .lightbox-info h3 {
@@ -2642,7 +2648,7 @@ a {
 .lightbox-next {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
+    color: #fff;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -2675,21 +2681,10 @@ a {
 /* Gallery CTA Section */
 .gallery-cta {
     padding: 100px 0;
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    background: #111111;
     text-align: center;
     position: relative;
     overflow: hidden;
-}
-
-.gallery-cta::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
-    animation: pulse 8s ease-in-out infinite;
 }
 
 .gallery-cta .cta-content {
@@ -2699,7 +2694,7 @@ a {
 
 .gallery-cta .cta-content h2 {
     font-size: clamp(2.5rem, 6vw, 3.5rem);
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;

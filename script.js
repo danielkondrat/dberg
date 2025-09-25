@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Gallery Lightbox Functionality
+/*// Gallery Lightbox Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const galleryItems = document.querySelectorAll('.gallery-item');
     
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
+});*/
 
 function openLightbox(imageSrc, title, description) {
     const lightbox = document.createElement('div');
