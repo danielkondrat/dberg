@@ -86,26 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-/*// Gallery Lightbox Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    
-    galleryItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const img = this.querySelector('img');
-            const titleEl = this.querySelector('.gallery-overlay h4');
-            const descEl = this.querySelector('.gallery-overlay p');
-            
-            if (img && titleEl && descEl) {
-                const title = titleEl.textContent;
-                const description = descEl.textContent;
-                openLightbox(img.src, title, description);
-            }
-        });
-    });
-});*/
-
-function openLightbox(imageSrc, title, description) {
+/* function openLightbox(imageSrc, title, description) {
     const lightbox = document.createElement('div');
     lightbox.className = 'lightbox-overlay';
     lightbox.innerHTML = `
@@ -148,7 +129,7 @@ function openLightbox(imageSrc, title, description) {
             document.removeEventListener('keydown', escapeHandler);
         }
     });
-}
+} */
 
 // Newsletter Form Submission
 const newsletterForm = document.getElementById('newsletterForm');
