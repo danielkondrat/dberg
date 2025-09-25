@@ -1762,13 +1762,13 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
+    color: #000;
     font-size: 12px;
     font-weight: bold;
 }
 
 .submit-btn {
-    background: #fff;
+    background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
     color: #fff;
     padding: 18px 40px;
     border: none;
@@ -1790,8 +1790,8 @@ a {
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
-    background: linear-gradient(135deg, #ff5252, #26a69a);
+    box-shadow: 0 12px 35px var(--box-shadow-color);
+    background: linear-gradient(135deg, var(--c1-hover), var(--c2-hover));
 }
 
 .submit-btn i {
@@ -1977,7 +1977,7 @@ a {
 .step-icon {
     width: 80px;
     height: 80px;
-    background: #fff;
+    background: linear-gradient(135deg, var(--c1), var(--c2));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2197,7 +2197,7 @@ a {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
-    border-bottom: 2px solid rgba(255, 107, 107, 0.3);
+    border-bottom: 2px solid var(--c2-hover);
     padding-bottom: 10px;
 }
 
@@ -2213,7 +2213,7 @@ a {
 }
 
 .form-actions .submit-btn {
-    background: #fff;
+    background: linear-gradient(135deg, var(--c1), var(--c2));
     color: #fff;
     padding: 20px 50px;
     border: none;
@@ -2229,13 +2229,13 @@ a {
     letter-spacing: 0.05em;
     margin-bottom: 1rem;
     font-family: inherit;
-    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 12px 35px var(--box-shadow-color);
 }
 
 .form-actions .submit-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 18px 45px rgba(255, 107, 107, 0.4);
-    background: linear-gradient(135deg, #ff5252, #26a69a);
+    box-shadow: 0 18px 45px var(--box-shadow-color);
+    background: linear-gradient(135deg, var(--c1-hover), var(--c2-hover));
 }
 
 .form-actions .submit-btn i {
