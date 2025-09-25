@@ -2377,10 +2377,16 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap:10px;
-    max-width:1400px;
+    max-width: 1400px;
     margin:0 auto;
     margin-bottom:10px;
 }
+
+.container-gallery {
+    max-width: none;
+    padding: none;
+}
+
 .gallery-masonry img {
     max-width:100%;
     height:100%;
