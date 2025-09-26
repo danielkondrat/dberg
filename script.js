@@ -64,7 +64,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Gallery Filter Functionality (Homepage and Reviews)
+/* // Gallery Filter Functionality (Homepage and Reviews)
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item, .review-card');
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-});
+}); */
 
 /* function openLightbox(imageSrc, title, description) {
     const lightbox = document.createElement('div');
@@ -256,21 +256,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-// Load More Reviews
-const loadMoreBtn = document.getElementById('loadMoreBtn');
-if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', function() {
-        // Simulate loading more reviews
-        this.textContent = 'Loading...';
-        
-        setTimeout(() => {
-            this.textContent = 'All Reviews Loaded';
-            this.disabled = true;
-            showMessage('All available reviews have been loaded!', 'success');
-        }, 1000);
-    });
-}
 
 // Helper function to show messages
 function showMessage(text, type, form = null) {
