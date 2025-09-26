@@ -307,8 +307,9 @@ a {
 }
 
 .main-p {
-    left: 20px;
-    bottom: 20px;
+    position: absolute;
+    left: 2px;
+    bottom: 2px;
 }
 
 /* Hero Content */
@@ -318,7 +319,6 @@ a {
     max-width: 800px;
     width: 100%;
     padding: 0 2rem;
-    text-align: center;
 }
 
 /* Hero Text */
