@@ -1619,6 +1619,22 @@ a {
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 8px;
+    padding-top: 10px;
+}
+
+.form-group-budget {
+    position: relative;
+}
+
+.form-group-budget::before {
+  content: "$";
+  position: absolute;
+  left: 10px;                 /* adjust to taste */
+  top: 72.5%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-weight: 600;
+  pointer-events: none;       /* click passes through to input */
 }
 
 .form-group input,
@@ -1711,7 +1727,7 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-family: inherit;
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 8px 25px var(--box-shadow-color);
 }
 
 .submit-btn:hover {
@@ -1824,21 +1840,10 @@ a {
 /* Ready to Book Section */
 .ready-to-book {
     padding: 100px 0;
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    background: #1a1a1a;
     text-align: center;
     position: relative;
     overflow: hidden;
-}
-
-.ready-to-book::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(78, 205, 196, 0.1) 0%, transparent 50%);
-    animation: pulse 8s ease-in-out infinite;
 }
 
 .ready-to-book .cta-content {

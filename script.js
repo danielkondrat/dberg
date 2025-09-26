@@ -46,6 +46,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+document.getElementById('budget').addEventListener('input', function () {
+    this.value = this.value.replace(/\D/g, ''); // remove anything that is NOT a digit
+});
+
 // Navbar Background Change on Scroll
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
