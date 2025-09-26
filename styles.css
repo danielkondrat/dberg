@@ -306,6 +306,11 @@ a {
     z-index: 1;
 }
 
+.main-p {
+    left: 20px;
+    bottom: 20px;
+}
+
 /* Hero Content */
 .page-hero .hero-content {
     position: relative;
