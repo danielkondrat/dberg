@@ -306,32 +306,25 @@ a {
     z-index: 1;
 }
 
-.main-p {
-    position: absolute;
-    left: 2px;
-    bottom: 2px;
-}
-
-/* Hero Content */
-.page-hero .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
+.page-hero {
+    position: relative; /* keep this relative so absolute children are positioned inside it */
     width: 100%;
-    padding: 0 2rem;
+    height: 60vh; /* or whatever height you want for the hero */
 }
 
-/* Hero Text */
-.page-hero .hero-content h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #fff 0%, #e4e6ea 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    padding: 1px;
+.page-hero .hero-content {
+    position: absolute;  /* now it's positioned inside .page-hero */
+    bottom: 20px;        /* distance from bottom */
+    left: 20px;          /* distance from left */
+    max-width: 800px;
+    width: calc(100% - 40px); /* respect padding */
+    z-index: 2;
+}
+
+.page-hero .hero-content h1,
+.page-hero .hero-content p {
+    text-align: left;
+    margin: 0;
 }
 
 .page-hero .hero-content p {
